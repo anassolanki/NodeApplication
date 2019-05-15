@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh 'node index.js -p 8081'
+                sh 'node index.js'
             }
         }
     }
