@@ -4,7 +4,7 @@ pipeline {
         stage('Run') {
             steps {
        
-                sh 'sh +x script.sh'
+                sh 'ssh vagrant@127.0.0.1 'sh +x script.sh' '
              
             }
         }
