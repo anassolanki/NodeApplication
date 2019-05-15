@@ -8,8 +8,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh 'pm2 start -f index.js'
-                sh 'pm2 ls'
+                sh './script.sh'
              
             }
         }
