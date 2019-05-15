@@ -1,7 +1,6 @@
 #!/bin/bash
-tar -cvf copy.tar *
-scp copy.tar vagrant@127.0.0.1:/home/vagrant
+scp * vagrant@127.0.0.1:/home/vagrant/MyApp
 ssh vagrant@127.0.0.1
-tar -xvf copy.tar /home/vagrant/MyApp/
+#tar -xvf copy.tar /home/vagrant/MyApp/
 cd MyApp
 pm2 start index.js
