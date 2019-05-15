@@ -2,6 +2,7 @@
 
 tar -cvf app.tar /var/lib/jenkins/workspace/FirstProject/
 chmod -R 777 app.tar
+chown -R vagrant:vagrant app.tar
 cp app.tar /home/vagrant/
 cd /home/vagrant/
 tar -xvf app.tar
