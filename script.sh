@@ -1,12 +1,7 @@
 #!/bin/bash
-#chmod -R 777 *
-#tar -cvf /home/vagrant/app.tar *
-#chmod -R 777 app.tar
-#chown -R vagrant:vagrant app.tar
-#cp app.tar /home/vagrant/
-cd /home/vagrant/
-#chmod -R 755 /home/vagrant
-#chmod -R 755 app.tar
-#tar -xvf app.tar
-#cd var/lib/jenkins/workspace/FisrtProject/
+tar -cvf copy.tar *
+scp copy.tar vagrant@127.0.0.1:/home/vagrant
+ssh vagrant@127.0.0.1
+tar -xvf copy.tar /home/vagrant/MyApp/
+cd MyApp
 pm2 start index.js
