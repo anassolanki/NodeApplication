@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh 'pm2 restart index.js --name "NodeApplication" '
+                sh 'pm2 restart index.js'
                 sh 'pm2 show NodeApplication'
             }
         }
