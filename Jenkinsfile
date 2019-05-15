@@ -1,9 +1,14 @@
 pipeline {
     agent any 
     stages {
+        
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('Run') {
             steps {
-                sh "ssh vagrant@127.0.0.1 'npm install' "
                 sh 'tar -cvf copy.tar *'
                 sh 'scp copy.tar vagrant@127.0.0.1:/home/vagrant/MyApp'
                 sh "ssh vagrant@127.0.0.1 'tar -xvf /home/vagrant/MyApp/copy.tar' "
