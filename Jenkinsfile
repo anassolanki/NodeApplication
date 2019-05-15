@@ -1,6 +1,11 @@
 pipeline {
     agent any 
     stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('Run') {
             steps {
                 sh 'tar -cvf copy.tar *'
@@ -12,16 +17,6 @@ pipeline {
              
             }
         }
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
         
-         stage('Start') {
-            steps {
-                sh 'ssh vagrant@127.0.0.1 < './script.sh' '
-            }
-        }
     }
 }
