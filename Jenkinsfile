@@ -9,7 +9,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh 'pm2 start index.js'
-                sh 'pm2 show NodeApplication'
+             
             }
         }
     }
